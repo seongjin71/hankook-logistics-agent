@@ -1,4 +1,4 @@
-import { X, Clock, Tag, AlertCircle, CheckCircle2, XCircle } from "lucide-react";
+import { X, Clock, Tag, CheckCircle2, XCircle } from "lucide-react";
 import type { AgentEvent } from "../../types";
 import { formatTime, severityBg, executionModeBadge } from "../../utils/formatters";
 import { approveAction, rejectAction } from "../../api/client";

@@ -42,7 +42,6 @@ export default function PriorityShift({ events }: Props) {
   const sorted = [...changes].sort(
     (a, b) => b.new_score - b.old_score - (a.new_score - a.old_score),
   );
-  const maxScore = Math.max(...sorted.map((c) => Math.max(c.old_score, c.new_score)), 100);
   const svgH = Math.max(sorted.length * 28 + 20, 80);
   const leftX = 80;
   const rightX = 260;
@@ -63,8 +62,6 @@ export default function PriorityShift({ events }: Props) {
 
           {sorted.map((c, i) => {
             const y = topY + i * 28 + 14;
-            const oldNorm = (c.old_score / maxScore) * 100;
-            const newNorm = (c.new_score / maxScore) * 100;
             const isUp = c.direction === "상향";
             const color = isUp ? "#10B981" : "#EF4444";
 

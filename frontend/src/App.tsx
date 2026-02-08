@@ -34,7 +34,7 @@ export default function App() {
   const [activePhase, setActivePhase] = useState<OODAPhase | null>(null);
   const [activeEventType, setActiveEventType] = useState<string | null>(null);
   const [alertFlash, setAlertFlash] = useState(false);
-  const phaseTimer = useRef<ReturnType<typeof setTimeout>>();
+  const phaseTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   // WebSocket subscriptions
   useEffect(() => {
